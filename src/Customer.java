@@ -7,9 +7,9 @@ public class Customer extends Restaurant {
     protected Table mesaAtual;
     protected int quantPessoas;
 
-    public Customer(int quantPessoas) {
+    public Customer(int quantPessoas, Table mesaAtual) {
         this.quantPessoas = quantPessoas;
-        this.mesaAtual = new Waiter().reservarMesa(this.quantPessoas);
+        this.mesaAtual = mesaAtual;
         this.cash = 10.00; //ESSE NUMERO PRECISA SER MAIOR QUE 0
         this.pedidos =  new ArrayList<>();
     }
