@@ -11,10 +11,10 @@ public class Cuisine{
 
     public void fazerPedido(){
         for (Food food : this.pedidos) {
-            System.out.println("Fazendo " + food.nameFood);
+            System.out.println("\nFazendo " + food.nameFood);
         }
-        System.out.println("\nPedidos prontos...\n");
-        System.out.println("Chamando Garçom...\n");
+        System.out.println("\nPedidos prontos...");
+        System.out.println("Chamando Garçom...");
         System.out.println("Pedido enviado para " + this.mesaAtual +"!\n");
     }
 

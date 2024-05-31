@@ -1,8 +1,7 @@
 import java.util.List;
 
-public class Payment{
+public class Payment implements paymentMethods{
     public List<Food> pedidos;
-    public double despesas;
     public double cash;
 
     public Payment(List<Food> pedidos, double cash) {
@@ -10,23 +9,23 @@ public class Payment{
         this.cash = cash;
     }
 
-    public void totalPayment(){
+    public double totalPayment(){
+        double despesas = 0;
         for (Food price : this.pedidos) {
             despesas += price.value;
         }
-        System.out.println("O total a se pagar é de: R$" + despesas);
+        return despesas;
     }
 
     public void efetuarPagamento(String nomeRestaurante){
-        for (Food price : this.pedidos) {
-            this.cash -= price.value;
-        }
+        this.cash -= totalPayment();
+
         if(this.cash >= 0){
             System.out.println("Pagamento efetuado. "+ nomeRestaurante +" agradece! Volte sempre!");
         } else{
             System.out.println("Ainda falta pagar R$" + this.cash*-1);
-        } //FAZER CONDIÇÃO PARA VERIFICAR SE O DINHEIRO DO CLIENTE CONSEGUE COMPRAR A COMIDA QUE ELE PEDIU.
-    }     //NÃO PRECISA SER NECESSARIAMENTE NESTE MÉTODO.
+        }
+    }
 }
 
 
