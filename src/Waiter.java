@@ -1,5 +1,3 @@
-
-
 import java.util.*;
 
 public class Waiter extends Restaurant {
