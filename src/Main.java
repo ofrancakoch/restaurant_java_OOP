@@ -12,7 +12,8 @@ public class Main {
         System.out.println("Quantos lugares você precisa?");
         restaurante.visualizarLugares();
         int quantCliente = myObj.nextInt();
-        Customer cliente = new Customer(quantCliente, waiter.reservarMesa(quantCliente));
+        Table mesaReservada = waiter.reservarMesa(quantCliente);
+        Customer cliente = new Customer(quantCliente, mesaReservada);
         try {
             cliente.clientTable();
             cliente.visualizarCardapio();
