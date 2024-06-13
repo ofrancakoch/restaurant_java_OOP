@@ -13,7 +13,7 @@ public class Waiter extends Restaurant {
                 return table;
             }
         }
-        System.out.println("Todos nossos lugares estão ocupados ou não existem mesas capazes de portarem este número de pessoas. \nSe possível, espere até que uma mesa esteja desocupada!\n");
+        System.out.println("Todos nossos lugares estão ocupados ou não existem mesas capazes de portarem este número de pessoas.\n");
         return null;
     }
 
